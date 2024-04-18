@@ -1,0 +1,5 @@
+setup.py
+InsurencepPricePrediction.egg-info/PKG-INFO
+InsurencepPricePrediction.egg-info/SOURCES.txt
+InsurencepPricePrediction.egg-info/dependency_links.txt
+InsurencepPricePrediction.egg-info/top_level.txt
