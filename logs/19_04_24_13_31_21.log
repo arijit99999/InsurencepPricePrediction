@@ -1,0 +1,41 @@
+96--INFO--2024-04-19 13:31:21,351--[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+96--INFO--2024-04-19 13:31:21,351--[33mPress CTRL+C to quit[0m
+96--INFO--2024-04-19 13:31:26,796--127.0.0.1 - - [19/Apr/2024 13:31:26] "GET / HTTP/1.1" 200 -
+96--INFO--2024-04-19 13:31:26,870--127.0.0.1 - - [19/Apr/2024 13:31:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+46--INFO--2024-04-19 13:31:39,092--Dataframe Gathered
+23--INFO--2024-04-19 13:31:39,842--Exception Occured in prediction pipeline
+838--ERROR--2024-04-19 13:31:39,848--Exception on /predict [POST]
+Traceback (most recent call last):
+  File "c:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\src\InsurencepPricePrediction\pipelines\prediction_pipeline.py", line 19, in model_pred_initiate
+    transform_data=preprocessor.transform(features)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\envip\Lib\site-packages\sklearn\utils\_set_output.py", line 295, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\envip\Lib\site-packages\sklearn\compose\_column_transformer.py", line 1003, in transform
+    raise ValueError(f"columns are missing: {diff}")
+ValueError: columns are missing: {'smoker', 'region'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\envip\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\envip\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\envip\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\envip\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\app.py", line 19, in pred_page
+    x=pred.model_pred_initiate(final_data)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\src\InsurencepPricePrediction\pipelines\prediction_pipeline.py", line 24, in model_pred_initiate
+    raise customexception(e,sys)
+src.InsurencepPricePrediction.exception.customexception: error has been occured in line no 19 script file name c:\Users\deyar\OneDrive\Desktop\InsurencepPricePrediction\src\InsurencepPricePrediction\pipelines\prediction_pipeline.py and message is columns are missing: {'smoker', 'region'}
+96--INFO--2024-04-19 13:31:39,850--127.0.0.1 - - [19/Apr/2024 13:31:39] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
