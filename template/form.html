@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>insurence price prediction</h1>
+    <form action="/predict" method="post">
+    <input name="age" type="text" placeholder="eneter age in float">
+      <br>
+      <select name="sex">
+        <option >female</option>
+        <option >male</option>
+      </select>
+      <br>
+      <input name="bmi" type="text" placeholder="eneter bmi in float">
+      <br>
+      <input name="children" type="text" placeholder="eneter children no range in 0-5">
+      <br>
+      <select name="smoker">
+        <option >no</option>
+        <option >yes</option>   
+      </select>
+      <br>
+      <select name="region">
+        <option >southwest</option>
+        <option >outheast</option>
+        <option >northwest</option>
+        <option >northeast</option>
+      </select>
+      <br>
+      <input type="submit" value="submit">
+      </form>
+</body>
+</html>
