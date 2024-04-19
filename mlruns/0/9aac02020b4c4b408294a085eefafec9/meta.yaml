@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/deyar/OneDrive/Desktop/InsurencepPricePrediction/mlruns/0/9aac02020b4c4b408294a085eefafec9/artifacts
+end_time: 1713513615008
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9aac02020b4c4b408294a085eefafec9
+run_name: classy-snipe-647
+run_uuid: 9aac02020b4c4b408294a085eefafec9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713513611563
+status: 3
+tags: []
+user_id: deyar

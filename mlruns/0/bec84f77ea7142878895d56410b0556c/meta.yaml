@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/deyar/OneDrive/Desktop/InsurencepPricePrediction/mlruns/0/bec84f77ea7142878895d56410b0556c/artifacts
+end_time: 1713509737357
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bec84f77ea7142878895d56410b0556c
+run_name: vaunted-mouse-604
+run_uuid: bec84f77ea7142878895d56410b0556c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713509734212
+status: 3
+tags: []
+user_id: deyar
