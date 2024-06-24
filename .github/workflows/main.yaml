@@ -2,7 +2,7 @@ name: build and push image to ECR
 on:
   push:
     branches: #if anything push into git main brunch ther ecr become triggerd#
-    - main
+     - main
 jobs:
   build:
     name: build image
