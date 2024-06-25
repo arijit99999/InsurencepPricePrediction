@@ -7,7 +7,7 @@ on:
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   ECR_REPOSITORY: insurence_price
-  CONTAINER_NAME: insurence_price_prediction   #These environment variables are defined for use throughout the workflow.
+  CONTAINER_NAME: insurence_price_prediction  #These environment variables are defined for use throughout the workflow.
                                               #AWS_REGION is fetched from the repository secrets, while ECR_REPOSITORY and 
                                               #CONTAINER_NAME are statically defined
 
@@ -24,7 +24,8 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4 #This step uses the actions/checkout action to clone the repository's code into the app runner.
+      uses: actions/checkout@v4 #This step uses the actions/checkout action to clone the repository's 
+                                #code into the app runner.
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1  
@@ -32,13 +33,14 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }} #This step configures the AWS credentials using 
-                                                      #the aws-actions/configure-aws-credentials action. 
-                                                      #It uses the AWS access key ID and secret access key stored in the repository
-                                                      #secrets and the AWS region from the environment variable.
+                                          #the aws-actions/configure-aws-credentials action. 
+                                          #It uses the AWS access key ID and secret access key stored in the repository
+                                          #secrets and the AWS region from the environment variable.
 
     - name: Login to Amazon ECR
       id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1 #This step logs into Amazon ECR using the aws-actions/amazon-ecr-login action.
+      uses: aws-actions/amazon-ecr-login@v1 #This step logs into Amazon ECR using the 
+                                            #aws-actions/amazon-ecr-login action.
 
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
@@ -47,5 +49,6 @@ jobs:
         IMAGE_TAG: insurence_price_image
       run: 
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG        #This step builds a Docker image from the Dockerfile in the repository
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG       
+        #This step builds a Docker image from the Dockerfile in the repository
                                                                 
